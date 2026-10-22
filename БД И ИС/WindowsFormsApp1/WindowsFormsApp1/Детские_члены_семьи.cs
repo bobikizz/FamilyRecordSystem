@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.familyDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
@@ -34,6 +35,16 @@ namespace WindowsFormsApp1
 
 
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            члены_семьиTableAdapter.Update(this.familyDataSet.Члены_семьи);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            членыСемьиBindingSource.AddNew();
         }
     }
 }

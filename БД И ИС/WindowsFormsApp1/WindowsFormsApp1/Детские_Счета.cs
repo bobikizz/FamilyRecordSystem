@@ -35,5 +35,15 @@ namespace WindowsFormsApp1
             this.счетаTableAdapter.Fill(this.familyDataSet.Счета);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            счетаBindingSource.AddNew();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            счетаTableAdapter.Update(this.familyDataSet.Счета);
+        }
     }
 }
