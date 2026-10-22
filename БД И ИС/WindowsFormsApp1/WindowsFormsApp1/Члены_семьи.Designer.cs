@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
-            this.членыСемьиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.члены_семьиTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Члены_семьиTableAdapter();
             this.кодЧленаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.членыСемьиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
+            this.члены_семьиTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Члены_семьиTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.членыСемьиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,20 +57,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(248, 167);
             this.dataGridView1.TabIndex = 1;
             // 
-            // familyDataSet
-            // 
-            this.familyDataSet.DataSetName = "familyDataSet";
-            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // членыСемьиBindingSource
-            // 
-            this.членыСемьиBindingSource.DataMember = "Члены семьи";
-            this.членыСемьиBindingSource.DataSource = this.familyDataSet;
-            // 
-            // члены_семьиTableAdapter
-            // 
-            this.члены_семьиTableAdapter.ClearBeforeFill = true;
-            // 
             // кодЧленаDataGridViewTextBoxColumn
             // 
             this.кодЧленаDataGridViewTextBoxColumn.DataPropertyName = "КодЧлена";
@@ -82,6 +68,20 @@
             this.рольDataGridViewTextBoxColumn.DataPropertyName = "Роль";
             this.рольDataGridViewTextBoxColumn.HeaderText = "Роль";
             this.рольDataGridViewTextBoxColumn.Name = "рольDataGridViewTextBoxColumn";
+            // 
+            // членыСемьиBindingSource
+            // 
+            this.членыСемьиBindingSource.DataMember = "Члены семьи";
+            this.членыСемьиBindingSource.DataSource = this.familyDataSet;
+            // 
+            // familyDataSet
+            // 
+            this.familyDataSet.DataSetName = "familyDataSet";
+            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // члены_семьиTableAdapter
+            // 
+            this.члены_семьиTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -101,6 +101,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -110,6 +111,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -119,6 +121,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Сохранить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Члены_семьи
             // 
@@ -134,8 +137,8 @@
             this.Text = "Члены_семьи";
             this.Load += new System.EventHandler(this.Члены_семьи_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.членыСемьиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

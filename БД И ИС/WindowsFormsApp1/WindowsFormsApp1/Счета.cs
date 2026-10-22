@@ -36,5 +36,28 @@ namespace WindowsFormsApp1
             this.счетаTableAdapter.Fill(this.familyDataSet.Счета);
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           счетаTableAdapter.Update(this.familyDataSet.Счета);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            счетаBindingSource.AddNew();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли вообще что удалять
+            if (счетаBindingSource.Current != null)
+            {
+                // 1. Удаляет текущую выбранную строку из компонента на форме
+                счетаBindingSource.RemoveCurrent();
+
+                // 2. Сразу сохраняет удаление физически в базу Access
+                счетаTableAdapter.Update(this.familyDataSet.Счета);
+            }
+        }
     }
 }

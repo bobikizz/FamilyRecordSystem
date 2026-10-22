@@ -16,5 +16,17 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Создаем экземпляр второй формы
+            Пароль mainMenu = new Пароль();
+
+            // Показываем вторую форму
+            mainMenu.Show();
+
+            // Скрываем текущую (первую) форму
+            this.Hide();
+        }
     }
 }

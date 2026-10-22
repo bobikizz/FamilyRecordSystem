@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.familyDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
@@ -34,6 +35,29 @@ namespace WindowsFormsApp1
             // TODO: данная строка кода позволяет загрузить данные в таблицу "familyDataSet.Траты". При необходимости она может быть перемещена или удалена.
             this.тратыTableAdapter.Fill(this.familyDataSet.Траты);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            тратыBindingSource.AddNew();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            тратыTableAdapter.Update(this.familyDataSet.Траты);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли вообще что удалять
+            if (тратыBindingSource.Current != null)
+            {
+                // 1. Удаляет текущую выбранную строку из компонента на форме
+                тратыBindingSource.RemoveCurrent();
+
+                // 2. Сразу сохраняет удаление физически в базу Access
+                тратыTableAdapter.Update(this.familyDataSet.Траты);
+            }
         }
     }
 }
