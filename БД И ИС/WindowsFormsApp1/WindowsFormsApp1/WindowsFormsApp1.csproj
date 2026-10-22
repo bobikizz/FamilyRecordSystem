@@ -77,11 +77,11 @@
     <Compile Include="Авторизация.Designer.cs">
       <DependentUpon>Авторизация.cs</DependentUpon>
     </Compile>
-    <Compile Include="Главное меню.cs">
+    <Compile Include="Главное_меню.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Главное меню.Designer.cs">
-      <DependentUpon>Главное меню.cs</DependentUpon>
+    <Compile Include="Главное_меню.Designer.cs">
+      <DependentUpon>Главное_меню.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="КатегорииТрат.Designer.cs">
       <DependentUpon>КатегорииТрат.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Пароль.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Пароль.Designer.cs">
+      <DependentUpon>Пароль.cs</DependentUpon>
     </Compile>
     <Compile Include="Счета.cs">
       <SubType>Form</SubType>
@@ -112,8 +118,8 @@
     <EmbeddedResource Include="Авторизация.resx">
       <DependentUpon>Авторизация.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Главное меню.resx">
-      <DependentUpon>Главное меню.cs</DependentUpon>
+    <EmbeddedResource Include="Главное_меню.resx">
+      <DependentUpon>Главное_меню.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="КатегорииТрат.resx">
       <DependentUpon>КатегорииТрат.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Пароль.resx">
+      <DependentUpon>Пароль.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Счета.resx">
       <DependentUpon>Счета.cs</DependentUpon>

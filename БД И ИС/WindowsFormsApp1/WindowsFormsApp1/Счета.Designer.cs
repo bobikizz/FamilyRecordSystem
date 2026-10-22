@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодСчетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.счетDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.счетаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.familyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
-            this.счетаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.счетаTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.СчетаTableAdapter();
-            this.кодСчетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.счетDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.счетаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -69,47 +69,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(248, 181);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(549, 303);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 52);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(388, 303);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 52);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Сохранить";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(246, 303);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 50);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // familyDataSet
-            // 
-            this.familyDataSet.DataSetName = "familyDataSet";
-            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // счетаBindingSource
-            // 
-            this.счетаBindingSource.DataMember = "Счета";
-            this.счетаBindingSource.DataSource = this.familyDataSet;
-            // 
-            // счетаTableAdapter
-            // 
-            this.счетаTableAdapter.ClearBeforeFill = true;
-            // 
             // кодСчетаDataGridViewTextBoxColumn
             // 
             this.кодСчетаDataGridViewTextBoxColumn.DataPropertyName = "КодСчета";
@@ -121,6 +80,50 @@
             this.счетDataGridViewTextBoxColumn.DataPropertyName = "Счет";
             this.счетDataGridViewTextBoxColumn.HeaderText = "Счет";
             this.счетDataGridViewTextBoxColumn.Name = "счетDataGridViewTextBoxColumn";
+            // 
+            // счетаBindingSource
+            // 
+            this.счетаBindingSource.DataMember = "Счета";
+            this.счетаBindingSource.DataSource = this.familyDataSet;
+            // 
+            // familyDataSet
+            // 
+            this.familyDataSet.DataSetName = "familyDataSet";
+            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(549, 303);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 52);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Удалить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(388, 303);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 52);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Сохранить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(246, 303);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 50);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // счетаTableAdapter
+            // 
+            this.счетаTableAdapter.ClearBeforeFill = true;
             // 
             // Счета
             // 
@@ -136,9 +139,9 @@
             this.Text = "Счета";
             this.Load += new System.EventHandler(this.Счета_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.счетаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

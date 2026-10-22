@@ -35,5 +35,28 @@ namespace WindowsFormsApp1
 
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            категории_тратTableAdapter.Update(this.familyDataSet.Категории_трат);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            категорииТратBindingSource.AddNew();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли вообще что удалять
+            if (категорииТратBindingSource.Current != null)
+            {
+                // 1. Удаляет текущую выбранную строку из компонента на форме
+                категорииТратBindingSource.RemoveCurrent();
+
+                // 2. Сразу сохраняет удаление физически в базу Access
+                категории_тратTableAdapter.Update(this.familyDataSet.Категории_трат);
+            }
+        }
     }
 }

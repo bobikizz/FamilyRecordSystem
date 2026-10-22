@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
-            this.категорииТратBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.категории_тратTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Категории_тратTableAdapter();
             this.кодКатегорииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.категорияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.категорииТратBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyDataSet = new WindowsFormsApp1.familyDataSet();
+            this.категории_тратTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Категории_тратTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.категорииТратBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -67,20 +67,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(247, 234);
             this.dataGridView1.TabIndex = 1;
             // 
-            // familyDataSet
-            // 
-            this.familyDataSet.DataSetName = "familyDataSet";
-            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // категорииТратBindingSource
-            // 
-            this.категорииТратBindingSource.DataMember = "Категории трат";
-            this.категорииТратBindingSource.DataSource = this.familyDataSet;
-            // 
-            // категории_тратTableAdapter
-            // 
-            this.категории_тратTableAdapter.ClearBeforeFill = true;
-            // 
             // кодКатегорииDataGridViewTextBoxColumn
             // 
             this.кодКатегорииDataGridViewTextBoxColumn.DataPropertyName = "КодКатегории";
@@ -93,6 +79,20 @@
             this.категорияDataGridViewTextBoxColumn.HeaderText = "Категория";
             this.категорияDataGridViewTextBoxColumn.Name = "категорияDataGridViewTextBoxColumn";
             // 
+            // категорииТратBindingSource
+            // 
+            this.категорииТратBindingSource.DataMember = "Категории трат";
+            this.категорииТратBindingSource.DataSource = this.familyDataSet;
+            // 
+            // familyDataSet
+            // 
+            this.familyDataSet.DataSetName = "familyDataSet";
+            this.familyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // категории_тратTableAdapter
+            // 
+            this.категории_тратTableAdapter.ClearBeforeFill = true;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(208, 326);
@@ -101,6 +101,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -110,6 +111,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Сохранить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -119,6 +121,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // КатегорииТрат
             // 
@@ -134,8 +137,8 @@
             this.Text = "КатегорииТрат";
             this.Load += new System.EventHandler(this.КатегорииТрат_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.категорииТратBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
