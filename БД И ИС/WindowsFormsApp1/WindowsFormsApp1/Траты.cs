@@ -59,5 +59,85 @@ namespace WindowsFormsApp1
                 тратыTableAdapter.Update(this.familyDataSet.Траты);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (Сумма dateForm = new Сумма())
+            {
+                if (dateForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Получаем выбранные пользователем даты
+                    DateTime start = dateForm.StartDate;
+                    DateTime end = dateForm.EndDate;
+
+                    // 2. Вызываем метод загрузки и расчета данных
+                    CalculateExpenses(start, end);
+                }
+            }
+        }
+        // ВСТАВЛЯЕМ СУЩЕСТВУЮЩИЙ МЕТОД НИЖЕ:
+
+        private void CalculateExpenses(DateTime startDate, DateTime endDate)
+        {
+            string connectionString =
+                @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\family.accdb;";
+
+            string query = @"
+        SELECT
+            C.[Категория] AS [Категория трат],
+            SUM(E.[Сумма]) AS [Общая сумма]
+        FROM
+            [Траты] AS E
+        INNER JOIN
+            [Категории трат] AS C
+            ON E.[КодКатегории] = C.[КодКатегории]
+        WHERE
+            E.[Дата] >= ? AND E.[Дата] < ?
+        GROUP BY
+            C.[Категория]";
+
+            try
+            {
+                using (System.Data.OleDb.OleDbConnection conn =
+                    new System.Data.OleDb.OleDbConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (System.Data.OleDb.OleDbCommand cmd =
+                        new System.Data.OleDb.OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("?",
+                            System.Data.OleDb.OleDbType.Date).Value =
+                            startDate.Date;
+
+                        cmd.Parameters.Add("?",
+                            System.Data.OleDb.OleDbType.Date).Value =
+                            endDate.Date.AddDays(1);
+
+                        System.Data.DataTable dt =
+                            new System.Data.DataTable();
+
+                        using (System.Data.OleDb.OleDbDataAdapter adapter =
+                            new System.Data.OleDb.OleDbDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+
+                        dataGridView1.DataSource = dt;
+
+                        if (dt.Rows.Count == 0)
+                        {
+                            MessageBox.Show(
+                                "За выбранный период трат не найдено.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ошибка при работе с БД:\n" + ex.Message);
+            }
+        }
     }
 }

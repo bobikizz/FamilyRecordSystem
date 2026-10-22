@@ -85,6 +85,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Детские_Счета.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Детские_Счета.Designer.cs">
+      <DependentUpon>Детские_Счета.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Детские_траты.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Детские_траты.Designer.cs">
+      <DependentUpon>Детские_траты.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Детские_члены_семьи.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Детские_члены_семьи.Designer.cs">
+      <DependentUpon>Детские_члены_семьи.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Детское_Меню.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Детское_Меню.Designer.cs">
+      <DependentUpon>Детское_Меню.cs</DependentUpon>
+    </Compile>
     <Compile Include="КатегорииТрат.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +120,12 @@
     </Compile>
     <Compile Include="Пароль.Designer.cs">
       <DependentUpon>Пароль.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Сумма.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Сумма.Designer.cs">
+      <DependentUpon>Сумма.cs</DependentUpon>
     </Compile>
     <Compile Include="Счета.cs">
       <SubType>Form</SubType>
@@ -130,11 +160,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Детские_Счета.resx">
+      <DependentUpon>Детские_Счета.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Детские_траты.resx">
+      <DependentUpon>Детские_траты.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Детские_члены_семьи.resx">
+      <DependentUpon>Детские_члены_семьи.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Детское_Меню.resx">
+      <DependentUpon>Детское_Меню.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="КатегорииТрат.resx">
       <DependentUpon>КатегорииТрат.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Пароль.resx">
       <DependentUpon>Пароль.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Сумма.resx">
+      <DependentUpon>Сумма.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Счета.resx">
       <DependentUpon>Счета.cs</DependentUpon>

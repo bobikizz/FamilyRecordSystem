@@ -28,5 +28,17 @@ namespace WindowsFormsApp1
             // Скрываем текущую (первую) форму
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Детское_Меню formDet = new Детское_Меню();
+
+            // Передаем текущую форму (Главное меню) как владельца
+            formDet.Owner = this;
+
+            // Показываем категории и скрываем главное меню
+            formDet.Show();
+            this.Hide();
+        }
     }
 }
