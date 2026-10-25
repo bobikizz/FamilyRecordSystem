@@ -28,14 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
+            this.button2 = new ModernButton();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(109)))), ((int)(((byte)(148)))));
+            this.button1.BorderRadius = 15;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.CustomTextColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
             this.button1.Location = new System.Drawing.Point(111, 195);
             this.button1.Name = "button1";
+            this.button1.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(68)))), ((int)(((byte)(102)))));
+            this.button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(100)))));
             this.button1.Size = new System.Drawing.Size(108, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "Родитель";
@@ -44,12 +54,22 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(109)))), ((int)(((byte)(148)))));
+            this.button2.BorderRadius = 15;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.CustomTextColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
             this.button2.Location = new System.Drawing.Point(550, 195);
             this.button2.Name = "button2";
+            this.button2.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(68)))), ((int)(((byte)(102)))));
+            this.button2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(100)))));
             this.button2.Size = new System.Drawing.Size(108, 52);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ребёнок";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Авторизация
@@ -67,7 +87,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ModernButton button1;
+        private ModernButton button2;
     }
 }

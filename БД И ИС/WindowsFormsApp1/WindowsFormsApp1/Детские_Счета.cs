@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Детские_Счета : Form
+    public partial class Детские_Счета : GradientForm
     {
         public Детские_Счета()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

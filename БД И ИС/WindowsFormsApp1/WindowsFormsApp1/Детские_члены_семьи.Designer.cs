@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодЧленаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.членыСемьиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.члены_семьиTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Члены_семьиTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new ModernButton();
+            this.button3 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.членыСемьиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
@@ -134,14 +134,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private ModernButton button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private familyDataSet familyDataSet;
         private System.Windows.Forms.BindingSource членыСемьиBindingSource;
         private familyDataSetTableAdapters.Члены_семьиTableAdapter члены_семьиTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодЧленаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn рольDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private ModernButton button2;
+        private ModernButton button3;
     }
 }

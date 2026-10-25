@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодТратыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодЧленаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +40,8 @@
             this.тратыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.тратыTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.ТратыTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new ModernButton();
+            this.button2 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.тратыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
@@ -166,7 +166,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private ModernButton button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private familyDataSet familyDataSet;
         private System.Windows.Forms.BindingSource тратыBindingSource;
@@ -177,7 +177,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn кодСчетаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn суммаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private ModernButton button3;
+        private ModernButton button2;
     }
 }

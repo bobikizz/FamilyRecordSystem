@@ -11,11 +11,12 @@ using WindowsFormsApp1.familyDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
-    public partial class Детские_траты : Form
+    public partial class Детские_траты : GradientForm
     {
         public Детские_траты()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

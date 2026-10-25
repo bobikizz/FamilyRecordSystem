@@ -71,6 +71,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>familyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GradientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModernButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModernTheme.cs" />
     <Compile Include="Авторизация.cs">
       <SubType>Form</SubType>
     </Compile>

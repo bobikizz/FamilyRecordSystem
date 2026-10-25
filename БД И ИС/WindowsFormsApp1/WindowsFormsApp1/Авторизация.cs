@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Авторизация : Form
+    public partial class Авторизация : GradientForm
     {
         public Авторизация()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -12,11 +12,12 @@ using System.Data.OleDb;
 
 namespace WindowsFormsApp1
 {
-    public partial class Сумма : Form
+    public partial class Сумма : GradientForm
     {
         public Сумма()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         public DateTime StartDate => dtpStart.Value.Date;

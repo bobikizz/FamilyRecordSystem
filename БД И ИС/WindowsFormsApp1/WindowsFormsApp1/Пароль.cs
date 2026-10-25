@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Пароль : Form
+    public partial class Пароль : GradientForm
     {
         public Пароль()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
