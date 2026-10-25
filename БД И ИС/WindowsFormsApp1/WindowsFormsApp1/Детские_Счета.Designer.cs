@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодСчетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.счетDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.счетаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.счетаTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.СчетаTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new ModernButton(); ;
+            this.button2 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.счетаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
@@ -134,14 +134,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private ModernButton button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private familyDataSet familyDataSet;
         private System.Windows.Forms.BindingSource счетаBindingSource;
         private familyDataSetTableAdapters.СчетаTableAdapter счетаTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодСчетаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn счетDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private ModernButton button3;
+        private ModernButton button2;
     }
 }

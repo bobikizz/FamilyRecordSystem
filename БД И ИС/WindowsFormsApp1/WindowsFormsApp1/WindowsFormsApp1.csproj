@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>familyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModernButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Авторизация.cs">
       <SubType>Form</SubType>
     </Compile>

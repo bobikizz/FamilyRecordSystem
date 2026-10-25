@@ -35,10 +35,10 @@
             this.членыСемьиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.члены_семьиTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.Члены_семьиTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
+            this.button2 = new ModernButton();
+            this.button4 = new ModernButton();
+            this.button5 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.членыСемьиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyDataSet)).BeginInit();
@@ -150,9 +150,9 @@
         private familyDataSetTableAdapters.Члены_семьиTableAdapter члены_семьиTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодЧленаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn рольDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private ModernButton button1;
+        private ModernButton button2;
+        private ModernButton button4;
+        private ModernButton button5;
     }
 }

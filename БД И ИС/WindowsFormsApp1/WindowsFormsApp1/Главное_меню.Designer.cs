@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
+            this.button2 = new ModernButton();
+            this.button3 = new ModernButton();
+            this.button4 = new ModernButton();
+            this.button5 = new ModernButton();
             this.SuspendLayout();
             // 
             // button1
@@ -103,11 +103,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private ModernButton button1;
+        private ModernButton button2;
+        private ModernButton button3;
+        private ModernButton button4;
+        private ModernButton button5;
     }
 }
 

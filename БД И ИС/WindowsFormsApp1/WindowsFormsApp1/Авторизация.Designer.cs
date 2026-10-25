@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
+            this.button2 = new ModernButton();
             this.SuspendLayout();
             // 
             // button1
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private ModernButton button1;
+        private ModernButton button2;
     }
 }

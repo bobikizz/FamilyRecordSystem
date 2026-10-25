@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new ModernButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодСчетаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.счетDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.счетаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.familyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new ModernButton();
+            this.button5 = new ModernButton();
+            this.button2 = new ModernButton();
             this.счетаTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.СчетаTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.счетаBindingSource)).BeginInit();
@@ -148,12 +148,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private ModernButton button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource familyDataSetBindingSource;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
+        private ModernButton button4;
+        private ModernButton button5;
+        private ModernButton button2;
         private familyDataSet familyDataSet;
         private System.Windows.Forms.BindingSource счетаBindingSource;
         private familyDataSetTableAdapters.СчетаTableAdapter счетаTableAdapter;
