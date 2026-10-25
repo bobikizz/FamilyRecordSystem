@@ -164,3 +164,25 @@ C:\Users\Login\Desktop\БД И ИС (5)\БД И ИС\WindowsFormsApp1\WindowsFor
 C:\Users\Login\Desktop\БД И ИС (5)\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
 C:\Users\Login\Desktop\БД И ИС (5)\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
 C:\Users\Login\Desktop\БД И ИС (5)\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe.config
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\family.accdb
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Авторизация.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Детские_Счета.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Детские_траты.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Детские_члены_семьи.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Детское_Меню.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.КатегорииТрат.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Пароль.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Сумма.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Счета.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Траты.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Члены_семьи.resources
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+F:\УДАЛИТЬ\БД И ИС\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb

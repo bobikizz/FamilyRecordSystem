@@ -36,7 +36,7 @@
             this.счетаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.familyDataSet = new WindowsFormsApp1.familyDataSet();
             this.счетаTableAdapter = new WindowsFormsApp1.familyDataSetTableAdapters.СчетаTableAdapter();
-            this.button3 = new ModernButton(); ;
+            this.button3 = new ModernButton();
             this.button2 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.счетаBindingSource)).BeginInit();

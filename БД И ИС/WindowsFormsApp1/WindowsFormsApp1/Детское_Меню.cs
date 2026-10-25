@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Детское_Меню : Form
+    public partial class Детское_Меню : GradientForm
     {
         public Детское_Меню()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void button2_Click(object sender, EventArgs e)

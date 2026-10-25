@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class КатегорииТрат : Form
+    public partial class КатегорииТрат : GradientForm
     {
         public КатегорииТрат()
         {
             InitializeComponent();
+            ModernTheme.Apply(this);
         }
 
         private void КатегорииТрат_Load(object sender, EventArgs e)
