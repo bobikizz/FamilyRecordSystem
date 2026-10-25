@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -6,61 +7,161 @@ using System.Windows.Forms;
 
 public class ModernButton : Button
 {
-    // Настройки внешнего вида в инспекторе Visual Studio (раздел "Modern Appearance")
-    [Category("Modern Appearance")]
-    [Description("Желаемый радиус закругления углов. Программа автоматически уменьшит его, если кнопка слишком мала, чтобы избежать багов.")]
-    public int BorderRadius { get; set; } = 20;
+    private int borderRadius = 15;
+
+    private Color normalColor =
+        Color.FromArgb(48, 68, 102);
+
+    private Color hoverColor =
+        Color.FromArgb(65, 100, 160);
+
+    private Color pressedColor =
+        Color.FromArgb(30, 55, 100);
+
+    private Color borderColor =
+        Color.FromArgb(84, 109, 148);
+
+    private Color customTextColor = Color.White;
+
+    private bool isHovered;
+    private bool isPressed;
 
     [Category("Modern Appearance")]
-    [Description("Пастельный цвет кнопки в обычном состоянии.")]
-    public Color NormalColor { get; set; } = Color.FromArgb(221, 235, 247); // Нежно-голубой
+    public int BorderRadius
+    {
+        get { return borderRadius; }
+        set
+        {
+            borderRadius = Math.Max(0, value);
+            Invalidate();
+        }
+    }
 
     [Category("Modern Appearance")]
-    [Description("Цвет кнопки при наведении курсора мыши.")]
-    public Color HoverColor { get; set; } = Color.FromArgb(198, 218, 238); // Чуть темнее
+    public Color NormalColor
+    {
+        get { return normalColor; }
+        set
+        {
+            normalColor = value;
+            Invalidate();
+        }
+    }
 
     [Category("Modern Appearance")]
-    [Description("Цвет кнопки в момент клика.")]
-    public Color PressedColor { get; set; } = Color.FromArgb(174, 199, 227); // Еще плотнее
+    public Color HoverColor
+    {
+        get { return hoverColor; }
+        set
+        {
+            hoverColor = value;
+            Invalidate();
+        }
+    }
 
     [Category("Modern Appearance")]
-    [Description("Цвет тонкой пастельной обводки.")]
-    public Color BorderColor { get; set; } = Color.FromArgb(180, 205, 230); // Мягкий контур
+    public Color PressedColor
+    {
+        get { return pressedColor; }
+        set
+        {
+            pressedColor = value;
+            Invalidate();
+        }
+    }
 
     [Category("Modern Appearance")]
-    [Description("Цвет текста (рекомендуется использовать темно-серые оттенки вместо черного).")]
-    public Color CustomTextColor { get; set; } = Color.FromArgb(70, 90, 110); // Элегантный грифельный
+    public Color BorderColor
+    {
+        get { return borderColor; }
+        set
+        {
+            borderColor = value;
+            Invalidate();
+        }
+    }
 
-    private bool isHovered = false;
-    private bool isPressed = false;
+    [Category("Modern Appearance")]
+    public Color CustomTextColor
+    {
+        get { return customTextColor; }
+        set
+        {
+            customTextColor = value;
+            Invalidate();
+        }
+    }
 
     public ModernButton()
     {
-        // Включаем продвинутые стили отрисовки и буферизацию
-        SetStyle(ControlStyles.AllPaintingInWmPaint |
-                 ControlStyles.OptimizedDoubleBuffer |
-                 ControlStyles.UserPaint |
-                 ControlStyles.ResizeRedraw |
-                 ControlStyles.SupportsTransparentBackColor, true);
+        SetStyle(
+            ControlStyles.UserPaint |
+            ControlStyles.AllPaintingInWmPaint |
+            ControlStyles.OptimizedDoubleBuffer |
+            ControlStyles.ResizeRedraw,
+            true);
 
-        // Базовые настройки стиля
-        BackColor = Color.Transparent;
-        Size = new Size(160, 45);
-        Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular); // Современный утонченный шрифт
-        Cursor = Cursors.Hand; // Курсор-рука при наведении
+        // Не используем Transparent у Button
+        BackColor = normalColor;
+
+        Size = new Size(160, 50);
+        Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        ForeColor = Color.White;
+        Cursor = Cursors.Hand;
+
+        UseVisualStyleBackColor = false;
     }
 
-    // Отслеживание событий мыши для смены состояний
-    protected override void OnMouseEnter(EventArgs e) { isHovered = true; Invalidate(); base.OnMouseEnter(e); }
-    protected override void OnMouseLeave(EventArgs e) { isHovered = false; isPressed = false; Invalidate(); base.OnMouseLeave(e); }
-    protected override void OnMouseDown(MouseEventArgs mevent) { isPressed = true; Invalidate(); base.OnMouseDown(mevent); }
-    protected override void OnMouseUp(MouseEventArgs mevent) { isPressed = false; Invalidate(); base.OnMouseUp(mevent); }
+    // Фон будем рисовать самостоятельно в OnPaint
+    protected override void OnPaintBackground(PaintEventArgs e)
+    {
+    }
 
-    // Метод построения сглаженного пути для закругления
-    private GraphicsPath GetRoundPath(RectangleF rect, float radius)
+    // ГЛАВНОЕ ИСПРАВЛЕНИЕ ЧЁРНЫХ УГЛОВ
+    private void DrawParentBackground(PaintEventArgs e)
+    {
+        if (Parent == null)
+        {
+            e.Graphics.Clear(SystemColors.Control);
+            return;
+        }
+
+        Graphics g = e.Graphics;
+        GraphicsState state = g.Save();
+
+        try
+        {
+            // Переходим к координатам родителя
+            g.TranslateTransform(-Left, -Top);
+
+            Rectangle bounds = new Rectangle(
+                Left, Top, Width, Height);
+
+            using (PaintEventArgs args =
+                new PaintEventArgs(g, bounds))
+            {
+                // Рисуем фон родителя
+                InvokePaintBackground(Parent, args);
+
+                // Рисуем его пользовательский Paint
+                InvokePaint(Parent, args);
+            }
+        }
+        finally
+        {
+            g.Restore(state);
+        }
+    }
+
+    // ПЛАВНЫЕ СКРУГЛЕНИЯ
+    private GraphicsPath GetRoundPath(
+        RectangleF rect, float radius)
     {
         GraphicsPath path = new GraphicsPath();
-        float diameter = radius * 2;
+
+        radius = Math.Max(0,
+            Math.Min(radius,
+                Math.Min(rect.Width, rect.Height) / 2f));
 
         if (radius <= 0)
         {
@@ -68,86 +169,133 @@ public class ModernButton : Button
             return path;
         }
 
-        float x = rect.X;
-        float y = rect.Y;
-        float width = rect.Width;
-        float height = rect.Height;
+        float d = radius * 2;
 
-        path.StartFigure();
-        path.AddArc(x, y, diameter, diameter, 180, 90);
-        path.AddArc(x + width - diameter, y, diameter, diameter, 270, 90);
-        path.AddArc(x + width - diameter, y + height - diameter, diameter, diameter, 0, 90);
-        path.AddArc(x, y + height - diameter, diameter, diameter, 90, 90);
+        path.AddArc(
+            rect.X, rect.Y, d, d, 180, 90);
+
+        path.AddArc(
+            rect.Right - d, rect.Y,
+            d, d, 270, 90);
+
+        path.AddArc(
+            rect.Right - d, rect.Bottom - d,
+            d, d, 0, 90);
+
+        path.AddArc(
+            rect.X, rect.Bottom - d,
+            d, d, 90, 90);
+
         path.CloseFigure();
+
         return path;
     }
 
-    // Основная отрисовка компонента
-    protected override void OnPaint(PaintEventArgs pevent)
+    // ОТРИСОВКА
+    protected override void OnPaint(PaintEventArgs e)
     {
-        Graphics g = pevent.Graphics;
+        if (Width <= 2 || Height <= 2)
+            return;
 
-        // Включаем максимальное сглаживание графики GDI+
+        Graphics g = e.Graphics;
+
+        // Сначала восстанавливаем фон под кнопкой
+        DrawParentBackground(e);
+
+        // Затем рисуем сглаженную кнопку
         g.SmoothingMode = SmoothingMode.AntiAlias;
-        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
         g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-        // ИСПРАВЛЕНИЕ ЧЕРНЫХ УГЛОВ: Закрашиваем подложку цветом фона формы
-        Color parentColor = this.Parent != null ? this.Parent.BackColor : SystemColors.Control;
-        using (SolidBrush parentBrush = new SolidBrush(parentColor))
+        Color currentColor = NormalColor;
+
+        if (!Enabled)
+            currentColor = Color.Gray;
+        else if (isPressed)
+            currentColor = PressedColor;
+        else if (isHovered)
+            currentColor = HoverColor;
+
+        RectangleF rect = new RectangleF(
+            0.5f, 0.5f,
+            Width - 1f, Height - 1f);
+
+        using (GraphicsPath path =
+            GetRoundPath(rect, BorderRadius))
         {
-            g.FillRectangle(parentBrush, ClientRectangle);
-        }
-
-        // АВТО-КОРРЕКТИРОВКА РАДИУСА ДЛЯ МАЛЕНЬКИХ КНОПОК:
-        // Защита от выворачивания геометрии наизнанку и появления «ушек»
-        int activeRadius = BorderRadius;
-        int maxRadius = Math.Min(Width, Height) / 2;
-        if (activeRadius > maxRadius)
-        {
-            activeRadius = maxRadius;
-        }
-
-        // Выбор пастельного цвета в зависимости от состояния кнопки
-        Color currentBgColor = NormalColor;
-        if (isPressed) currentBgColor = PressedColor;
-        else if (isHovered) currentBgColor = HoverColor;
-
-        // Небольшой отступ в 0.5 пикселя, чтобы контур не обрезался по краям контейнера
-        RectangleF rectBounds = new RectangleF(0.5f, 0.5f, Width - 1f, Height - 1f);
-
-        if (activeRadius > 0)
-        {
-            using (GraphicsPath path = GetRoundPath(rectBounds, activeRadius))
+            using (SolidBrush brush =
+                new SolidBrush(currentColor))
             {
-                // Рисуем мягкое пастельное тело кнопки
-                using (SolidBrush brush = new SolidBrush(currentBgColor))
-                {
-                    g.FillPath(brush, path);
-                }
-
-                // Рисуем аккуратную обводку для эффекта объема и гладкости стыков
-                using (Pen pen = new Pen(BorderColor, 1f))
-                {
-                    g.DrawPath(pen, path);
-                }
+                g.FillPath(brush, path);
             }
-        }
-        else
-        {
-            // Отрисовка без закругления, если activeRadius оказался равен 0
-            using (SolidBrush brush = new SolidBrush(currentBgColor))
+
+            using (Pen pen =
+                new Pen(BorderColor, 1f))
             {
-                g.FillRectangle(brush, rectBounds);
-            }
-            using (Pen pen = new Pen(BorderColor, 1f))
-            {
-                g.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
+                g.DrawPath(pen, path);
             }
         }
 
-        // Рисуем текст красивым цветом ровно по центру кнопки
-        TextRenderer.DrawText(g, Text, Font, ClientRectangle, CustomTextColor,
-            TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+        // Текст
+        TextRenderer.DrawText(
+            g,
+            Text,
+            Font,
+            ClientRectangle,
+            Enabled ? CustomTextColor : Color.LightGray,
+            TextFormatFlags.HorizontalCenter |
+            TextFormatFlags.VerticalCenter |
+            TextFormatFlags.EndEllipsis);
+    }
+
+    protected override void OnMouseEnter(EventArgs e)
+    {
+        base.OnMouseEnter(e);
+        isHovered = true;
+        Invalidate();
+    }
+
+    protected override void OnMouseLeave(EventArgs e)
+    {
+        base.OnMouseLeave(e);
+        isHovered = false;
+        isPressed = false;
+        Invalidate();
+    }
+
+    protected override void OnMouseDown(MouseEventArgs e)
+    {
+        base.OnMouseDown(e);
+
+        if (e.Button == MouseButtons.Left)
+        {
+            isPressed = true;
+            Invalidate();
+        }
+    }
+
+    protected override void OnMouseUp(MouseEventArgs e)
+    {
+        base.OnMouseUp(e);
+        isPressed = false;
+        Invalidate();
+    }
+
+    protected override void OnMouseCaptureChanged(EventArgs e)
+    {
+        base.OnMouseCaptureChanged(e);
+        isPressed = false;
+        Invalidate();
+    }
+
+    protected override void OnLocationChanged(EventArgs e)
+    {
+        base.OnLocationChanged(e);
+        Invalidate();
+    }
+
+    protected override void OnEnabledChanged(EventArgs e)
+    {
+        base.OnEnabledChanged(e);
+        Invalidate();
     }
 }
